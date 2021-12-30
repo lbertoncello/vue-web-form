@@ -1,13 +1,28 @@
 <template>
   <form>
     <label>Email: </label>
-    <input type="email" required>
+    <!-- 
+      v-model creates a two-way data binding between the input field and the given data attribute.
+      It means that whatever change made by the user on the input field will be reflected in the component's data attribute,
+      and whatever change made on the component's data attribute will be reflected in the input field.
+    -->
+    <input type="email" required v-model="email">
+
+    <label>Password: </label>
+    <input type="password" required v-model="password">
   </form>
+  <p>Email: {{ email }}</p>
+  <p>Password: {{ password }}</p>
 </template>
 
 <script>
 export default {
-
+  data() {
+    return {
+      email: '',
+      password: ''
+    }
+  }
 }
 </script>
 
