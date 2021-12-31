@@ -23,20 +23,6 @@
       <label>Accept terms and conditions</label>
     </div>
 
-    <!-- Way to work with multiple (a group of) checkboxes -->
-    <!-- <div>
-      <input type="checkbox" value="shaun" v-model="names">
-      <label>Shaun</label>
-    </div>
-    <div>
-      <input type="checkbox" value="yoshi" v-model="names">
-      <label>Yoshi</label>
-    </div>
-    <div>
-      <input type="checkbox" value="mario" v-model="names">
-      <label>Mario</label>
-    </div> -->
-
   </form>
 
   <p>Email: {{ email }}</p>
@@ -54,7 +40,6 @@ export default {
       password: '',
       role: 'designer',
       terms: false,
-      // names: []
     }
   }
 }
