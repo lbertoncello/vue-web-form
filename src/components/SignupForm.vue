@@ -29,7 +29,6 @@
   <p>Password: {{ password }}</p>
   <p>Role: {{ role }}</p>
   <p>Terms accepted: {{ terms }}</p>
-  <p>Names: {{ names }}</p>
 </template>
 
 <script>
