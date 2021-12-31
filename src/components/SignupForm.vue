@@ -17,6 +17,13 @@
       <option value="designer">Web Designer</option>
     </select>
 
+    <label>Skills:</label>
+    <input type="text" v-model="tempSkill" @keyup.alt="addSkill">
+    <!-- The key MUST BE UNIQUE. Otherwise, unexpected behaviour can happen. -->
+    <div v-for="skill in skills" :key="skill" class="pill">
+      {{ skill }}
+    </div>
+
     <!-- Way to work with a single checkbox -->
     <div class="terms">
       <input type="checkbox" v-model="terms" required>
@@ -39,6 +46,18 @@ export default {
       password: '',
       role: 'designer',
       terms: false,
+      tempSkill: '',
+      skills: []
+    }
+  },
+  methods: {
+    addSkill(event) {
+      if(event.key === ',' && this.tempSkill) {
+        if(!this.skills.includes(this.tempSkill)) {
+          this.skills.push(this.tempSkill)
+        }
+        this.tempSkill = ''
+      }
     }
   }
 }
