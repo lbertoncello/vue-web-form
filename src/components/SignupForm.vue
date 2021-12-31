@@ -21,7 +21,7 @@
     <input type="text" v-model="tempSkill" @keyup.alt="addSkill">
     <!-- The key MUST BE UNIQUE. Otherwise, unexpected behaviour can happen. -->
     <div v-for="skill in skills" :key="skill" class="pill">
-      {{ skill }}
+      <span @click="deleteSkill(skill)">{{ skill }}</span>
     </div>
 
     <!-- Way to work with a single checkbox -->
@@ -58,6 +58,9 @@ export default {
         }
         this.tempSkill = ''
       }
+    },
+    deleteSkill(skill) {
+      this.skills = this.skills.filter((item) => item !== skill)
     }
   }
 }
